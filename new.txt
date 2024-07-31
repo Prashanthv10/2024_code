@@ -1,4 +1,4 @@
-#!/bin/bash
+i#!/bin/bash
 echo "my name is prashanth"
 
 << comment
@@ -6,4 +6,7 @@ this is for testing
 comment
 
 echo "what"
+
+echo "my name is praveenwq!
+
 
