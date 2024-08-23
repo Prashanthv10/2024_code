@@ -1,0 +1,4 @@
+kubectl create secret docker-registry private-reg-key \
+    --docker-server=docker.io \
+    --docker-username= \
+    --docker-password=

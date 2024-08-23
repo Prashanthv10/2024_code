@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: nginxp
+    image: v3
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ImagePullsecrets:
+     - name: private-reg-key
+    ports:
+      - containerPort: 80
