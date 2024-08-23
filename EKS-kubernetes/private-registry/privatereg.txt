@@ -1,4 +1,4 @@
 kubectl create secret docker-registry private-reg-key \
-    --docker-server=docker.io/prashant301k/pacha \
-    --docker-username=prashant301k \
-    --docker-password=
+    --docker-server=docker.io \
+    --docker-username=<username> \
+    --docker-password=<access token>

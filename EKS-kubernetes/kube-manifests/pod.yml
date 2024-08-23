@@ -14,5 +14,7 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 80
-  ImagePullsecrets:
-     - name: private-reg-key
+  imagePullSecrets:  # if i comment this wont work bcz private registry
+     - name: private-reg-key  # if no secrete key created in kubectl -- wont work
+
+  ## create secrets using privatereg.txt 
