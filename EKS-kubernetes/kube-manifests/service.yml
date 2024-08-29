@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: myservice
 spec:
-  type: NodePort
+  type: NodePort  # k get nodes -o wide to get the external ip
   selector:
     app: myapp
   ports:

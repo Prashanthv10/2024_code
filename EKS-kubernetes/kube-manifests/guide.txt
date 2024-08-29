@@ -24,6 +24,17 @@ kubectl rollout history deployment/my-first-deployment --revision=1
 kubectl rollout history deployment/my-first-deployment --revision=2
 kubectl rollout history deployment/my-first-deployment --revision=3
 
+===========================================================
+
+#to check the logs of Container
+$k logs <pod name> -c <container name>
+
+============================================================
+
+Rolling restarts will kill the existing pods and recreate new pods in a rolling fashion.
+# Rolling Restarts
+kubectl rollout restart deployment/<Deployment-Name>
+==============================================================================================
 
 
 kubectl get rs
