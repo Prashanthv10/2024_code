@@ -20,5 +20,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: goodbye
-      run: echo"goodbye"
+      run: echo "goodbye"
       shell: bash
