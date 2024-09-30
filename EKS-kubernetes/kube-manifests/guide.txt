@@ -60,4 +60,13 @@ kubectl describe pod podname
 kubectl edit pod podname
 kubectl grt svc
 
+========================labels=================
+kubectl get pods --show-labels
+kubectls get pods -l <label>=<value>
+kubectls get pods -l <label>!=<value>    #not equal
+## for single pod we can add more labels
+
+===========================================================
+k label pod podname app=myapp  # using podname we can add labels to pod
+k label pod -l app=myapp app2=myapp2  # using label also we add label
 
