@@ -1,0 +1,72 @@
+kubectl create deployment <Deplyment-Name> --image=<Container-Image>
+
+kubectl run <podname> --image <dockerreg/image:tag>
+
+kubectl expose deployment <deploy name> --type=NodePort --port=80
+kubectl get nodes -o wide   # take the external ip and search along with node port
+
+# Get Container Name from current deployment
+kubectl get deployment my-first-deployment -o yaml
+
+===============================================================
+# Update Deployment - SHOULD WORK NOW
+kubectl set image deployment/<Deployment-Name> <Container-Name>=<Container-Image> --record=true
+kubectl set image deployment deploy-pacha pacha=prashant301k/pacha:v2
+
+# Verify Rollout Status 
+kubectl rollout status deployment/my-first-deployment
+
+# Check the Rollout History of a Deployment
+kubectl rollout history deployment/<Deployment-Name>
+
+# List Deployment History with revision information
+kubectl rollout history deployment/my-first-deployment --revision=1
+kubectl rollout history deployment/my-first-deployment --revision=2
+kubectl rollout history deployment/my-first-deployment --revision=3
+
+===========================================================
+
+#to check the logs of Container
+$k logs <pod name> -c <container name>
+
+============================================================
+
+Rolling restarts will kill the existing pods and recreate new pods in a rolling fashion.
+# Rolling Restarts
+kubectl rollout restart deployment/<Deployment-Name>
+==============================================================================================
+
+
+kubectl get rs
+=====================================================================
+
+#scale up
+kubectl scale --replicas=20 deployment/<Deployment-Name>
+
+# Scale Down the Deployment
+kubectl scale --replicas=10 deployment/my-first-deployment 
+
+kubectl secre
+
+# secret creation
+kubectl create secret docker-registry private-reg-key \
+    --docker-server=docker.io \
+    --docker-username=<username> \
+    --docker-password=<access token>
+
+kubectl get pods
+kubectl delete pod podname
+kubectl describe pod podname
+kubectl edit pod podname
+kubectl grt svc
+
+========================labels=================
+kubectl get pods --show-labels
+kubectls get pods -l <label>=<value>
+kubectls get pods -l <label>!=<value>    #not equal
+## for single pod we can add more labels
+
+===========================================================
+k label pod podname app=myapp  # using podname we can add labels to pod
+k label pod -l app=myapp app2=myapp2  # using label also we add label
+
